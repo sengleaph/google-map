@@ -1,20 +1,25 @@
 package com.sifu.mylocation.data.local
 
 import android.content.Context
-import com.sifu.mylocation.data.dto.AtmDto
+import com.google.gson.Gson
+import com.sifu.mylocation.data.dto.BranchDto
+import com.sifu.mylocation.data.dto.BranchListDto   // ← wrapper
+import com.sifu.mylocation.domain.repository.LocalBranchDataSource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.json.Json
 
-class LocalAtmDataSource(private val context: Context) {
+class LocalBranchDataSourceImpl(
+    private val context: Context
+) : LocalBranchDataSource {
 
-    private val json = Json { ignoreUnknownKeys = true }
+    override suspend fun getBranchList(): BranchListDto =
+        withContext(Dispatchers.IO) {
+            val json = context.assets
+                .open("atm_list_en.json")
+                .bufferedReader()
+                .use { it.readText() }
 
-    suspend fun getAtms(): List<AtmDto> = withContext(Dispatchers.IO) {
-        val jsonString = context.assets
-            .open("atmMockup.json")
-            .bufferedReader()
-            .use { it.readText() }
-        json.decodeFromString<List<AtmDto>>(jsonString)
-    }
+            Gson().fromJson(json, BranchListDto::class.java)
+        }
 }

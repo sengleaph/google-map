@@ -6,7 +6,6 @@ import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.location.Priority
 import com.google.android.gms.tasks.CancellationTokenSource
-import com.sifu.mylocation.domain.model.Atm
 import com.sifu.mylocation.domain.model.MapLocation
 import com.sifu.mylocation.domain.model.MapMarker
 import com.sifu.mylocation.domain.repository.LocationRepository

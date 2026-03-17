@@ -1,6 +1,5 @@
 package com.sifu.mylocation.domain.repository
 
-import com.sifu.mylocation.domain.model.Atm
 import com.sifu.mylocation.domain.model.MapLocation
 import com.sifu.mylocation.domain.model.MapMarker
 import kotlinx.coroutines.flow.Flow

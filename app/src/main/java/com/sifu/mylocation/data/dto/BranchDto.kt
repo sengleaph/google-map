@@ -3,51 +3,51 @@ package com.sifu.mylocation.data.dto
 
 import com.google.gson.annotations.SerializedName
 
-data class Marker(
+data class BranchDto(
     @SerializedName("address")
-    val address: String?,
+    val address: String = "",
     @SerializedName("business")
-    val business: String?,
+    val business: String = "",
     @SerializedName("discount")
-    val discount: String?,
+    val discount: String = "",
     @SerializedName("email")
-    val email: String?,
+    val email: String = "",
     @SerializedName("fax")
-    val fax: String?,
+    val fax: String = "",
     @SerializedName("fix_m")
-    val fixM: String?,
+    val fixM: String = "",
     @SerializedName("hour")
-    val hour: String?,
+    val hour: String = "",
     @SerializedName("id")
-    val id: String?,
+    val id: String = "",
     @SerializedName("lat")
-    val lat: String?,
+    val lat: String = "",
     @SerializedName("lng")
-    val lng: String?,
+    val lng: String = "",
     @SerializedName("name")
-    val name: String?,
+    val name: String = "",
     @SerializedName("note")
-    val note: String?,
+    val note: String = "",
     @SerializedName("openacc_m")
-    val openaccM: String?,
+    val openaccM: String = "",
     @SerializedName("photo")
-    val photo: String?,
+    val photo: String = "",
     @SerializedName("place_id")
-    val placeId: String?,
+    val placeId: String = "",
     @SerializedName("province")
-    val province: String?,
+    val province: String = "",
     @SerializedName("self_m")
-    val selfM: String?,
+    val selfM: String = "",
     @SerializedName("service")
-    val service: String?,
+    val service: String = "",
     @SerializedName("status")
-    val status: String?,
+    val status: String = "",
     @SerializedName("tel")
-    val tel: String?,
+    val tel: String = "",
     @SerializedName("type")
-    val type: String?,
+    val type: String = "",
     @SerializedName("validity_date")
-    val validityDate: String?,
+    val validityDate: String = "",
     @SerializedName("website")
-    val website: String?
+    val website: String = ""
 )

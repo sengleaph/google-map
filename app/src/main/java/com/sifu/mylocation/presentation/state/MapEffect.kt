@@ -1,7 +1,6 @@
 package com.sifu.mylocation.presentation.state
 
 import com.google.android.gms.maps.model.LatLng
-import com.sifu.mylocation.domain.model.Atm
 import com.sifu.mylocation.domain.model.MapLocation
 import com.sifu.mylocation.domain.model.MapMarker
 

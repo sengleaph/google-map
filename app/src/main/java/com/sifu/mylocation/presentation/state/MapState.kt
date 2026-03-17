@@ -1,6 +1,8 @@
 package com.sifu.mylocation.presentation.state
 
 import com.google.android.gms.maps.model.LatLng
+import com.sifu.mylocation.data.dto.BranchDto
+import com.sifu.mylocation.domain.model.BranchMarker
 import com.sifu.mylocation.domain.model.MapLocation
 import com.sifu.mylocation.domain.model.MapMarker
 import com.sifu.mylocation.domain.model.MapType
@@ -19,5 +21,8 @@ data class MapState(
     val searchResults: List<MapLocation> = emptyList(),
     val isSearchVisible: Boolean = false,
     val isBottomSheetVisible: Boolean = false,
-    val errorMessage: String? = null
+    val errorMessage: String? = null,
+    val branchMarkers: List<BranchMarker> = emptyList(),
+    val isBranchMarkersLoading: Boolean = false,
+    val branches: List<BranchDto> = emptyList(),
 )

@@ -80,4 +80,7 @@ dependencies {
 
     debugImplementation(libs.androidx.ui.tooling)
 
+    implementation("com.google.code.gson:gson:2.11.0")
+
+
 }

@@ -9,6 +9,7 @@ class MapScreen : Screen {
     @Composable
     override fun Content() {
         val viewModel = getScreenModel<MapViewModel>()
-        MapScreenContent(viewModel = viewModel)
+//        MapScreenContent(viewModel = viewModel)
+        BranchListScreen()
     }
 }

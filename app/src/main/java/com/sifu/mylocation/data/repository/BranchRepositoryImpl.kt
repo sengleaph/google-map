@@ -1,18 +1,16 @@
-// data/repository/LocalBranchRepository.kt
+// data/repository/BranchRepositoryImpl.kt
 package com.sifu.mylocation.data.repository
 
-import com.sifu.mylocation.data.local.LocalAtmDataSource
-import com.sifu.mylocation.data.mapper.toDomain
-import com.sifu.mylocation.domain.model.BranchMarker
+import com.sifu.mylocation.data.dto.BranchDto
 import com.sifu.mylocation.domain.repository.BranchRepository
+import com.sifu.mylocation.domain.repository.LocalBranchDataSource
 
-class LocalBranchRepository(
-    private val dataSource: LocalAtmDataSource
+class BranchRepositoryImpl(
+    private val localDataSource: LocalBranchDataSource
 ) : BranchRepository {
 
-    override suspend fun getBranchMarkers(): Result<List<BranchMarker>> =
+    override suspend fun getBranches(): Result<List<BranchDto>> =
         runCatching {
-            dataSource.getAtms()
-                .mapNotNull { it.toDomain() }  // skips rows with invalid lat/lng
+            localDataSource.getBranchList().marker
         }
 }
